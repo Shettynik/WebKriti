@@ -10,22 +10,22 @@ const EventForm = () => {
                     <p>Error has occurred</p>
                     <form>
                         <div className="inputBx">
-                            <span>Title</span>
+                            <span className="title">Title</span>
                             <input type="text" name="title" />
                         </div>
                         <div className="inputBx">
-                            <span>Description</span>
+                            <span className="description">Description</span>
                             <input type="text" name="title" />
                         </div>
                         <div className="inputBx">
-                            <span>Report</span>
+                            <span className="report">Report</span>
                             <textarea type="text" name="report" rows="3"/>
                         </div>
                         <div className="inputBx">
-                            <span>Upload Images</span>
-                            <textarea type="file" name="images" multiple/>
+                            <span className="upload">Upload Images</span>
+                            <input type="file" name="images" multiple/>
                         </div>
-                        <div className="inputBx">
+                        <div className="btnBx">
                             <input type="submit" value="Create" />
                         </div>
                     </form>

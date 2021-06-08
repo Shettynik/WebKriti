@@ -1,58 +1,35 @@
 import React from 'react';
-import { Card, Button } from 'react-bootstrap';
-import Bottom from './Bottom';
 import './Council.css';
-import Home from './Home';
 
-const Events = () => {
+const Council = () => {
     return (
-        <>
-            <Home />
-            <div className="card-contents">
-                <div className="card-item">
-                    <Card>
-                        <Card.Img variant="top" style={{ height: '180px' }} src="https://category-image-upload.s3.amazonaws.com/nikshita/events.jpg" />
-                        <Card.Body>
-                            <Card.Title>Card Title</Card.Title>
-                            <Card.Text>
-                                Some quick example text to build on the card title and make up the bulk of
-                                the card's content.
-                            </Card.Text>
-                            <Button variant="primary">View More</Button>
-                        </Card.Body>
-                    </Card>
-                    
+        <div className="council-screen">
+            <div className="bx">
+                <div className="contentBx">
+                    <img src="https://category-image-upload.s3.amazonaws.com/nikshita/events.jpg" alt="council-img" />
+                    <div className="infoBx">
+                        <h2>Title</h2>
+                        <p>Description</p>
+                        <h5>Admins</h5>
+                        <div className="adminBx">
+                            <div><img src="https://category-image-upload.s3.amazonaws.com/nikshita/nikshita2021-06-06T16229551791601714006178.jpg" alt="" /><p>Nikshita Shetty</p></div>
+                            {/* <div><img src="https://category-image-upload.s3.amazonaws.com/nikshita/nikshita2021-06-06T16229551791601714006178.jpg" alt="" /><p>Nikshita Shetty</p></div> */}
+                        </div>
+                    </div>
                 </div>
-                <div className="card-item">
-                    <Card>
-                        <Card.Img variant="top" style={{ height: '180px' }} src="https://category-image-upload.s3.amazonaws.com/nikshita/events.jpg" />
-                        <Card.Body>
-                            <Card.Title>Card Title</Card.Title>
-                            <Card.Text>
-                                Some quick example text to build on the card title and make up the bulk of
-                                the card's content.
-                            </Card.Text>
-                            <Button variant="primary">View More</Button>
-                        </Card.Body>
-                    </Card>
-                    
-                </div>
-                <div className="card-item">
-                    <Card>
-                        <Card.Img variant="top" style={{ height: '180px' }} src="https://category-image-upload.s3.amazonaws.com/nikshita/events.jpg" />
-                        <Card.Body>
-                            <Card.Title>Card Title</Card.Title>
-                            <Card.Text>
-                                Card-Description
-                            </Card.Text>
-                            <Button variant="primary">View More</Button>
-                        </Card.Body>
-                    </Card>
+                <div className="eventsBx">
+                    <h4>Events conducted</h4>
+                    <ul>
+                        <li>first event</li>
+                        <li>second event</li>
+                        <li>third event</li>
+                    </ul>
+                    {/* if no events */}
+                    <h3>No events yet</h3>
                 </div>
             </div>
-            <Bottom />
-        </>
+        </div>
     )
 }
 
-export default Events
+export default Council

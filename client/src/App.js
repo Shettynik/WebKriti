@@ -1,13 +1,11 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Login from './components/Login';
-import EventForm from './components/EventForm';
+import Council from './components/Council';
 
 function App() {
   return (
     <div className="App">
-      {/* <Login /> */}
-      <EventForm />
+      <Council />
     </div>
   );
 }

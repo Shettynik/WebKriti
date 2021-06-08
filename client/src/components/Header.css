@@ -3,15 +3,11 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    color: purple;
     font-family: 'Poppins', sans-serif;
 }
 
-.card-contents{
-    width: 100%;
-    height: 100%;
-}
-
-.card-contents .card-item{
-    margin: 100px;
+.login-link{
+    color: purple;
+    margin-left: -16px;
 }

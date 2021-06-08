@@ -1,24 +1,56 @@
 import React from 'react';
+import { Card, Button } from 'react-bootstrap';
+import Bottom from './Bottom';
 import './Home.css';
-import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import Header from './Header';
 
 const Home = () => {
     return (
-        <Navbar bg="light" expand="lg">
-            <Navbar.Brand href="#home">WebKriti</Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="mr-auto">
-                    <NavDropdown title="Events" id="basic-nav-dropdown">
-                        <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                    </NavDropdown>
-                </Nav>
-                <Nav.Link href="#link" className="login-link">Login</Nav.Link>
-            </Navbar.Collapse>
-        </Navbar>
+        <>
+            <Header />
+            <div className="card-contents">
+                <div className="card-item">
+                    <Card>
+                        <Card.Img variant="top" style={{ height: '180px' }} src="https://category-image-upload.s3.amazonaws.com/nikshita/events.jpg" />
+                        <Card.Body>
+                            <Card.Title>Card Title</Card.Title>
+                            <Card.Text>
+                                Card-Description
+                            </Card.Text>
+                            <Button variant="primary">View More</Button>
+                        </Card.Body>
+                    </Card>
+
+                </div>
+                <div className="card-item">
+                    <Card>
+                        <Card.Img variant="top" style={{ height: '180px' }} src="https://category-image-upload.s3.amazonaws.com/nikshita/events.jpg" />
+                        <Card.Body>
+                            <Card.Title>Card Title</Card.Title>
+                            <Card.Text>
+                                Card-Description
+                            </Card.Text>
+                            <Button variant="primary">View More</Button>
+                        </Card.Body>
+                    </Card>
+
+                </div>
+                <div className="card-item">
+                    <Card>
+                        <Card.Img variant="top" style={{ height: '180px' }} src="https://category-image-upload.s3.amazonaws.com/nikshita/events.jpg" />
+                        <Card.Body>
+                            <Card.Title>Card Title</Card.Title>
+                            <Card.Text>
+                                Card-Description
+                            </Card.Text>
+                            <Button variant="primary">View More</Button>
+                        </Card.Body>
+                    </Card>
+                </div>
+            </div>
+            <Bottom />
+        </>
     )
 }
 
-export default Home
+export default Home;
