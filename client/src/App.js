@@ -1,11 +1,11 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Council from './components/Council';
+import Event from './components/Event';
 
 function App() {
   return (
     <div className="App">
-      <Council />
+      <Event />
     </div>
   );
 }
