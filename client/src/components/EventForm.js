@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './EventForm.css';
 
-const EventForm = () => {
+const EventForm = ({match, history}) => {
+    const [title, setTitle] = useState("");
+    const [description, setDescription] = useState("");
+    const [report, setReport] = useState("");
+    useEffect(() => {
+        // localStorage.setItem("authToken","")
+        // if (!localStorage.getItem("authToken")) {
+        //     history.push("/login");
+        // }
+    })
     return (
         <div className="create-screen">
             <div className="contentBx">
@@ -11,11 +20,11 @@ const EventForm = () => {
                     <form>
                         <div className="inputBx">
                             <span className="title">Title</span>
-                            <input type="text" name="title" />
+                            <input type="text" name="title" required/>
                         </div>
                         <div className="inputBx">
                             <span className="description">Description</span>
-                            <input type="text" name="title" />
+                            <input type="text" name="title" required/>
                         </div>
                         <div className="inputBx">
                             <span className="report">Report</span>
