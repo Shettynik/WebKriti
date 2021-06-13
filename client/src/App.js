@@ -6,6 +6,7 @@ import Home from './components/Home';
 import Council from './components/Council';
 import Login from './components/Login';
 import EventForm from './components/EventForm';
+import AddMemberForm from './components/AddMembers';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <PrivateRoute path="/updateEvent/:councilName/:eventName" exact component={EventForm} />
           <PrivateRoute path="/deleteEvent/:councilName/:eventName" exact component={DeleteEvent} />
           <PrivateRoute path="/addMember/:councilName" exact component={AddMember} */}
+          <Route path="/addMember/:councilName" exact component={AddMemberForm} />
           <Route path="/createEvent/:councilName" exact component={EventForm} />
           <Route path="/login" exact component={Login} />
           <Route path="/" exact component={Home} />

@@ -3,7 +3,7 @@ import './Login.css';
 import axios from 'axios';
 
 const Login = ({history}) => {
-    const [role, setrole] = useState("");
+    const [role, setrole] = useState("admin");
     const [username, setusername] = useState("");
     const [password, setpassword] = useState("");
     const [error, setError] = useState("");
@@ -16,29 +16,41 @@ const Login = ({history}) => {
                 "Content-Type": "application/json"
             }
         }
-
-
+        
         try {
+            const user = {
+                role: role,
+                username: username,
+                password: password
+            }
+            console.log(user)
             const {data} = await axios.post("http://localhost:5000/login", {role, username, password}, config);
             console.log(data)
-            // localStorage.setItem("id", data.id);
-            // localStorage.setItem("authToken", data.token);
+            localStorage.setItem("council", data.councilName)
+            localStorage.setItem("role", role);
+            localStorage.setItem("authToken", data.token);
+            console.log(localStorage)
 
-            // history.push("/")
+            history.push("/")
 
         } catch (error) {
-            setError(`Error: ${error}`)
+            console.log(error)
+            setError(`Error: ${role} not found`)
             setTimeout(() => {
                 setError("")
             }, 5000);
+            setrole("admin");
+            setpassword("");
+            setusername("");
         }
-
-    // useEffect(() => {
-    //     if(localStorage.getItem("authToken")){
-    //         history.push("/")
-    //     }
-    // }, [history]);
     }
+
+    useEffect(() => {
+        if(localStorage.getItem("authToken")){
+            history.push("/")
+        }
+    }, [history]);
+
     return (
         <div className="login-screen">
             <div className="contentBx">
@@ -47,16 +59,16 @@ const Login = ({history}) => {
                     <p>{error}</p>
                     <form onSubmit={LoginHandler}>
                         <div className="inputBx">
-                            <input type="radio" value="admin" name="role" className="admin" onChange={(e) => {setrole(e.target.value)}} /> Admin
-                            <input type="radio" value="member" name="role" className="member" onChange={(e) => {setrole(e.target.value)}} /> Member
+                            <input type="radio" value="admin" name="role" className="admin" default onClick={(e) => {setrole(e.target.value)}} /> Admin
+                            <input type="radio" value="member" name="role" className="member" onClick={(e) => {setrole(e.target.value)}} /> Member
                         </div>
                         <div className="inputBx">
                             <span>Username</span>
-                            <input type="text" name="username" onChange={(e) => {setusername(e.target.value)}} />
+                            <input type="text" name="username" value={username} onChange={(e) => {setusername(e.target.value)}} />
                         </div>
                         <div className="inputBx">
                             <span>Password</span>
-                            <input type="password" name="password" onChange={(e) => {setpassword(e.target.value)}} />
+                            <input type="password" name="password" value={password} onChange={(e) => {setpassword(e.target.value)}} />
                         </div>
                         <div className="inputBx">
                             <input type="submit" value="login" className="login-btn" />
