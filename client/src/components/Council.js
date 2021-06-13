@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import './Council.css';
 import Admins from './Admins';
 import EventName from './EventName';
+import Header from './Header';
 
 const Council = ({match}) => {
     const [council, setCouncil] = useState({});

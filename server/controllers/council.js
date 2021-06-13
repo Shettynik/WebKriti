@@ -1,6 +1,18 @@
 const mysqlConnection = require("../middlewares/db");
 const ErrorResponse = require("../utils/errorResponse");
 
+exports.councilNames = async(req, res, next) => {
+    const sql = "SELECT councilName FROM Councils";
+    try {
+        const councilNames = await mysqlConnection.query(sql);
+        res.status(200).json({
+            success: true,
+            data: councilNames[0]
+        })
+    } catch (error) {
+        next(new ErrorResponse(error.message, 401));
+    }
+}
 
 exports.council = async(req, res, next) => {
     const sql = "SELECT * FROM Councils";

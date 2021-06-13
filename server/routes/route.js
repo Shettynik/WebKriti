@@ -2,7 +2,7 @@ const express = require("express");
 const { addMember, getMember } = require("../controllers/member");
 const { Login } = require("../controllers/auth");
 const router = express.Router();
-const {councilInfo, council, councilAdmins, councilWithEventNames} = require("../controllers/council");
+const {councilInfo, council, councilAdmins, councilWithEventNames, councilNames} = require("../controllers/council");
 const { eventInfo, createEvent, eventImages, deleteEvent } = require("../controllers/event");
 
 // Council
@@ -10,6 +10,7 @@ router.route("/councils").get(council);
 router.route("/councils/:councilName").get(councilInfo);
 router.route("/councilAdmins/:councilName").get(councilAdmins);
 router.route("/councilEvents/:councilName").get(councilWithEventNames);
+router.route("/councilNames").get(councilNames);
 
 // Events
 router.route("/events/:councilName/:eventName").get(eventInfo);

@@ -22,7 +22,7 @@ const EventName = (props) => {
                 return <li><Link to={"/"+props.councilName+"/"+event.eventName}>{event.eventName}</Link></li>
             })}
             </ul>
-            <Button><Link to={"/createEvent/"+props.councilName}>Create Event</Link></Button>
+            <Button><Link to={"/createEvent/"+props.councilName} class="button-link">Create Event</Link></Button>
         </div>
     )
 }

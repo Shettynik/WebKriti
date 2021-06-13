@@ -15,3 +15,7 @@
 .card-contents .card-item{
     margin: 100px;
 }
+
+.card-contents .card-item .button-link{
+    color: white;
+}

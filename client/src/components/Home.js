@@ -20,7 +20,7 @@ const Home = () => {
             <Header />
             <div className="card-contents">
                 {councils && councils.map((council) => {
-                    return <div className="card-item">
+                    return <div className="card-item" id={council.councilName}>
                         <Card>
                             <Card.Img variant="top" style={{ height: '180px' }} src={council.councilImg} />
                             <Card.Body>
@@ -28,7 +28,7 @@ const Home = () => {
                                 <Card.Text>
                                     {council.description}
                                 </Card.Text>
-                                <Button variant="primary"><Link to={"/"+council.councilName}>View More</Link></Button>
+                                <Button variant="primary"><Link class="button-link" to={"/"+council.councilName}>View More</Link></Button>
                             </Card.Body>
                         </Card>
                     </div>

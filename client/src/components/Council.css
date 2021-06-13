@@ -84,6 +84,10 @@
     margin: 30px;
 }
 
+.button-link{
+    color: white;
+}
+
 @media (max-width: 1024px) {
     .council-screen .bx .contentBx img {
         width: 100%;
